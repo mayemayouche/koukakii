@@ -11,11 +11,14 @@
 
 ?>
 	<footer id="colophon" class="site-footer">
+        <div class="fleur"></div>
+        <div class="orchid"></div>
     <div class="footer-content">
         <div class="nomination oscar-template">
             <?php get_template_part('oscar'); ?>
         </div>
         <div class="footer-links">
+        <div class="hibiscus"></div>
             <ul>
                 <li><a href="#">Mentions Légales</a></li>
                 <li><a href="#">STUDIO KOUKAKI</a></li>

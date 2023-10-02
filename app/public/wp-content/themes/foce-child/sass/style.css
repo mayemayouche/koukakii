@@ -13,6 +13,7 @@
   width: 100%;
   overflow: hidden;
   margin:0;
+
 }
 
 .background {
@@ -28,6 +29,7 @@
   object-fit: cover;
   opacity:0
   fadeInBanner 0.8s ease-in forwards;
+  min-height: 806px;
 }
 
 #background-video {
@@ -37,16 +39,14 @@
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0; /* La vidéo est initialement invisible */
+  opacity: 0; 
   animation: fadeInVideo 0.8s ease-in forwards;
+  min-height: 806px;
+
 }
 
-.banner img{
-  margin-top: 0;
-  width: auto;
-}
 .logo {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   animation: fadeInLogo  0.8s ease-in forwards;
 }
@@ -103,6 +103,12 @@
   align-items: center;
 }
 
+.story h2{
+  background-image: url("../media/images/Studio-Koukaki.png");
+  animation: fadeInBackground 10s ease forwards; 
+
+}
+
 @keyframes rotateInfinitely {
   0% {
     transform: rotate(0deg);
@@ -143,23 +149,7 @@ h3 {
   color: white;
   padding: 1em 2em;
   margin: 0;
-  text-align: left;
   position: relative;
-}
-
-h3::before {
-  content: "";
-  background-image: url("../media/images/Rectangle23.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 60;
-  z-index: -1; 
-  animation: fadeInBackground 10s ease forwards; 
 }
 
 @keyframes fadeInBackground {
@@ -179,19 +169,34 @@ h3::before {
     transform: rotate(360deg);
   }
 }
-.story h2::before {
-  position: absolute;
-  left: 0;
-  top: 1.8em;
-  z-index: -1;
+
+@keyframes fadeInSection {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.story h2::after {
+#studio, #story, #place{
+  animation: fadeInSection 10s ease forwards;
+}
+
+.sunflowerfeuilles {
+  content: url("../media/images/sunflower_leaves.png");
+  position: absolute;
+  left:0.5em;
+  top: 7.8em;
+}
+
+.Sunflower {
   content: url("../media/images/Sunflower.png");
   position: absolute;
-  left: 0.7em;
-  top: 6em;
+  left: 3.2em;
+  top: 27em;
   animation: rotateInfinitely 10s linear infinite;
+  z-index: 99;
 }
 
 .story__article {
@@ -213,7 +218,7 @@ h3::before {
   z-index: 1;
 }
 
-.story__article::after {
+.petithibiscus {
   content: url("../media/images/Hibiscus.png");
   position: absolute;
   left: calc(50% + 414px);
@@ -237,6 +242,12 @@ h3::before {
 .story #characters div {
   flex: 1;
 }
+.perso{
+  background-image: url("../media/images/orange_characters_bg.png");
+  padding: 1em 2em;
+  margin: 0;
+  position: relative;
+}
 
 .story #characters .other-characters {
   display: flex;
@@ -258,13 +269,15 @@ h3::before {
 }
 
 .apparition {
-  background-image: url("../media/images/orange_place_bg.png");
+  background-image: url("../media/images/Rectangle23.png");
   margin-bottom: -1em;
   background-repeat: no-repeat;
-	background-size: contain;
+	background-size: 211px 119px;
 	padding: 1em 4em;
 	background-position: center;
 	text-align: left;
+  animation: fadeInBackground 10s ease forwards; 
+
 }
 
 #place {
@@ -360,7 +373,8 @@ h3::before {
 
 #studio h2 {
 	overflow: hidden;
-
+  background-image: url("../media/images/purple_studio_bg.png");
+  animation: fadeInBackground 10s ease forwards; 
 }
 
 #studio h2::before {
@@ -368,14 +382,38 @@ h3::before {
 	left: -1em;
 	top: 0;
   animation: rotateInfinitely 10s linear infinite;
-
 }
+
+.feuillemilieu{
+  height:150px;
+  width: 35px;
+}
+
+.paragraphe {
+  display: flex; /* Utilisation de flexbox */
+justify-content: space-between; /* Espace équitable entre les éléments */
+}
+
+.para{
+  width: 600px;
+  padding: 60px 20px 60px 60px;
+}
+
 
 #studio h2::after {
 	position: absolute;
-	right: 1em;
-	top: 1.2em;
+	left: -1em;
+	top: 0;
   animation: rotateInfinitely 10s linear infinite;
+
+}
+
+.flower {
+	position: absolute;
+	right: 5em;
+	top: 5em;
+  animation: rotateInfinitely 10s linear infinite;
+  content: url("../media/images/flower.png");
 
 }
 
@@ -390,6 +428,8 @@ h3::before {
   text-align: left;
   background-image: url("../media/images/Rectangle23.png");
   width: 840px;
+  animation: fadeInBackground 10s ease forwards; 
+
 }
 
 .site-footer {
@@ -402,13 +442,15 @@ h3::before {
   align-items: center;
 }
 
-.site-footer::before {
+.fleur {
   content: url("../media/images/Sunflower.png");
   position: absolute;
+  left: 4em;
+	top: 0em;
   animation: rotateInfinitely 10s linear infinite;
 }
 
-.site-footer::after {
+.orchid {
   content: url("../media/images/orchid.png");
   position: absolute;
   right: -4em;
@@ -434,7 +476,7 @@ h3::before {
   text-decoration: none;
 }
 
-.site-footer ul::after {
+.hibiscus {
   content: url("../media/images/hibiscus_footer.png");
   position: absolute;
   left: calc(50% - 323px);
