@@ -706,6 +706,8 @@ textarea {
 	width: 100%;
 }
 
+/*banner*/
+
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
@@ -785,7 +787,6 @@ textarea {
 }
 
 .story #place > div {
-	max-width: 580px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -806,15 +807,6 @@ textarea {
 	overflow: hidden;
 	background-image: url("./assets/images/purple_studio_bg.png");
 }
-
-#studio h2::before {
-	content: url("./assets/images/random_flower.png");
-	position: absolute;
-	left: -1em;
-	top: 0;
-}
-
-
 
 #studio > div::before {
 	content: url("./assets/images/trple-leaf.png");

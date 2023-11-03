@@ -306,3 +306,4 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in C:\Users\utilisateur\Local Sites\koukakii\app\public\wp-content\themes\foce-child\index.php on line 15
+[15-Oct-2023 16:11:41 UTC] PHP Parse error:  syntax error, unexpected 'get_header' (T_STRING) in C:\Users\utilisateur\Local Sites\koukakii\app\public\wp-content\themes\foce-child\front-page.php on line 10

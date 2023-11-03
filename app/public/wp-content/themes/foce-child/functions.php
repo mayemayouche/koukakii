@@ -19,8 +19,11 @@ if ( get_stylesheet() !== get_template() ) {
         return get_option( 'theme_mods_' . get_template(), $default );
     } );
 }
-
 function theme_enqueue_scripts() {
+    // Enqueue swiper script from CDN
+    wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array('jquery'), '10.0', true);
+
+    // Enqueue your custom script
     wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/script.js', array('jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');

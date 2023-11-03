@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*
  Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
  Theme URI: https://www.koukaki.local
@@ -8,11 +9,12 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
- .banner {
+
+.banner {
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin:0;
+  margin: 0;
 
 }
 
@@ -27,8 +29,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity:0
-  fadeInBanner 0.8s ease-in forwards;
+  opacity: 0 fadeInBanner 0.8s ease-in forwards;
   min-height: 806px;
 }
 
@@ -39,35 +40,306 @@
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0; 
+  opacity: 0;
   animation: fadeInVideo 0.8s ease-in forwards;
   min-height: 806px;
-
 }
 
 .logo {
-  position: fixed;
+  position: absolute;
   z-index: 1;
-  animation: fadeInLogo  0.8s ease-in forwards;
+  animation: fadeInLogo 0.8s ease-in forwards;
+  top: 100px;
+
 }
+
+li {
+  list-style: none;
+}
+a,
+a:visited {
+  color: black;
+  text-decoration: none;
+  font-size: 48px;
+
+}
+a:hover {
+  text-shadow: 5px 5px 8px rgb(255, 119, 0);
+
+}
+
+/**** NAVBAR ****/
+nav{
+background:#FFD5A2;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: calc(0.5rem + 1.5vw);
+text-align: center;
+height:80px ;
+}
+#nav h3{
+margin:0 auto;
+font-size:24px;
+color:black;
+
+}
+
+#icons {
+cursor: pointer;
+}
+
+#icons:before {
+  content: "\2630";
+  margin-right: 40px;
+
+}
+.active #icons:before {
+  content: "\2715";
+}
+nav ul {
+  position: fixed;
+  top: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #efcda2;
+  width: 100%;
+  height:100vh;
+  text-align: center;
+  display:none ;
+ }
+ 
+nav li {
+  padding: 36px 0;
+}
+.liste-transition {
+  position: relative;
+  height:150px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.liste-transition::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background-image: url("../media/images/purple_title_bg.png");
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  opacity: 0;*/
+  transition: opacity 0.3s; /* Durée du fondu en millisecondes
+  z-index: -1; /* Mettez l'image de fond en dessous du contenu */
+}
+
+.liste-transition:hover::before {
+  opacity: 1;
+}
+
+.liste-transition a {
+  position: relative;
+  z-index: 1; /* Mettez le texte en premier plan par-dessus l'image de fond */
+}
+
+.liste-transition2 {
+  position: relative;
+  height:150px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  overflow: auto;
+}
+
+.liste-transition2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s; /* Durée du fondu en millisecondes */
+  z-index: -1; /* Mettez l'image de fond en dessous du contenu */
+}
+
+.liste-transition2:hover::before {
+  opacity: 1;
+}
+
+.liste-transition2 a {
+  position: relative;
+  z-index: 1; /* Mettez le texte en premier plan par-dessus l'image de fond */
+}
+
+
+
+nav.active ul {
+  position: absolute;
+  right: 0;
+  z-index: 2; /* Pour s'assurer que le menu est au-dessus de la vidéo ou de l'image de fond */
+  opacity: 1;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+   text-align: center;
+  }
+
+  .image-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent; /* Ajustez la couleur de fond selon vos besoins */
+    display: none; /* Masquez la superposition d'images par défaut */
+    z-index: 9999;
+  }
+  
+
+  .nav.active .image-overlay {
+    /* Styles pour l'affichage des images lorsque le menu est ouvert */
+    animation: fadeInImages 1s ease-in forwards;
+  }
+    /* Animation menu */
+
+    #jaune{
+      position: absolute;
+  bottom: 5%;
+  left: 5%;
+  animation: flotter 10s linear infinite;
+
+
+    }
+
+    #gris{
+      position: absolute;
+  bottom: 316px;
+  left: 75%;
+  animation: flotter 10s linear infinite;
+
+    }
+
+
+    #orchidee{
+      position: absolute;
+  top: 50px;
+  left: -66px;
+  animation: rotateInfinitely 10s linear infinite;
+
+    }
+
+    #hibiscus{
+      position: absolute;
+      width:33% ;
+bottom:-25%; 
+right: -17%;
+animation: rotateInfinitely 20s linear infinite;
+
+    }
+
+    #cat{
+      position: absolute;
+  top: 80px;
+  left: 20%;
+  animation: flotter 10s linear infinite;
+    }
+
+    
+    #tournesol{
+      position: absolute;
+  top: 9%;
+  left: 72%;
+  animation: rotateInfinitely 10s linear infinite;
+
+    }
+
+       
+    #marguerite{
+      width: 6%;
+      position: absolute;
+  left: 98%;
+  bottom:50%;
+  animation: rotateInfinitely 10s linear infinite;
+
+    }
+
+       
+    #petitlogo{
+      position: absolute;
+  top: 0;
+  left:45%;
+
+    }
+
+       
+    #flower{
+      width:5%;
+      position: absolute;
+  top: 40%;
+  left: 15%;
+  animation: rotateInfinitely 10s linear infinite;
+
+    }
+
+    @keyframes flotter {
+        0% {
+          transform: translateX(0) translateY(0);
+        }
+        12.5% {
+          transform: translateX(8px) translateY(-8px);
+        }
+        25% {
+          transform: translateX(16px) translateY(0);
+        }
+        37.5% {
+          transform: translateX(8px) translateY(8px);
+        }
+        50% {
+          transform: translateX(0) translateY(16px);
+        }
+        62.5% {
+          transform: translateX(-8px) translateY(8px);
+        }
+        75% {
+          transform: translateX(-16px) translateY(0);
+        }
+        87.5% {
+          transform: translateX(-8px) translateY(-8px);
+        }
+        100% {
+          transform: translateX(0) translateY(0);
+        }
+      }
+      
+      .element {
+        animation: flottement-circulaire 3s linear infinite;
+      }
+      
 
 @keyframes fadeInBanner {
   from {
-      opacity: 0;
-      transform: translateY(-100px);
+    opacity: 0;
+    transform: translateY(-100px);
   }
+
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes fadeInVideo {
   from {
-      opacity: 0;
+    opacity: 0;
   }
+
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
@@ -81,21 +353,25 @@
     opacity: 0;
     transform: translateY(-100px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 @keyframes fadeInLogo {
   from {
     opacity: 0;
     transform: translateY(100px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .story {
   position: relative;
   display: flex;
@@ -103,20 +379,24 @@
   align-items: center;
 }
 
-.story h2{
-  background-image: url("../media/images/Studio-Koukaki.png");
-  animation: fadeInBackground 10s ease forwards; 
+//*.story h2{
+background-image: url("../media/images/Studio-Koukaki.png");
+animation: fadeInBackground 10s ease forwards;
 
 }
+
+* //
 
 @keyframes rotateInfinitely {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 /* les titres*/
 h2 {
   color: #FFF5E9;
@@ -130,7 +410,7 @@ h2 {
   margin: 0;
   background-position: center;
   text-align: center;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
   width: auto;
 }
 
@@ -138,10 +418,12 @@ h2 {
   0% {
     opacity: 0;
   }
+
   100% {
-    opacity: 1; 
+    opacity: 1;
   }
 }
+
 h3 {
   font-size: 42px;
   font-weight: 700;
@@ -156,6 +438,7 @@ h3 {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -165,6 +448,17 @@ h3 {
   0% {
     transform: rotate(0deg);
   }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateInfinitely {
+  0% {
+    transform: rotate(0deg);
+  }
+
   100% {
     transform: rotate(360deg);
   }
@@ -174,19 +468,22 @@ h3 {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
-#studio, #story, #place{
+#studio,
+#story,
+#place {
   animation: fadeInSection 10s ease forwards;
 }
 
 .sunflowerfeuilles {
   content: url("../media/images/sunflower_leaves.png");
   position: absolute;
-  left:0.5em;
+  left: 0.5em;
   top: 7.8em;
 }
 
@@ -198,6 +495,7 @@ h3 {
   animation: rotateInfinitely 10s linear infinite;
   z-index: 99;
 }
+
 
 .story__article {
   display: flex;
@@ -226,9 +524,12 @@ h3 {
   animation: rotateInfinitely 10s linear infinite;
 
 }
+
 .main-character {
   margin-left: 20px;
 }
+
+
 .story #characters {
   margin: 6em;
   display: flex;
@@ -242,11 +543,26 @@ h3 {
 .story #characters div {
   flex: 1;
 }
-.perso{
+
+.perso {
   background-image: url("../media/images/orange_characters_bg.png");
   padding: 1em 2em;
   margin: 0;
   position: relative;
+  opacity: 0;
+}
+
+.perso-transition {
+  animation: fadeInSection 10s ease forwards;
+}
+
+.titre {
+  background-image: url("../media/images/Studio-Koukaki.png");
+  opacity: 0;
+}
+
+.titre-transition {
+  animation: fadeInSection 10s ease forwards;
 }
 
 .story #characters .other-characters {
@@ -260,24 +576,17 @@ h3 {
   margin: 0;
 }
 
-.story #place {
-  display: flex;
-  background-image: url("../media/images/Studio_Koukaki-image_place.png");
-  width: 100%;
-  min-height: 699px;
-  background-size: cover;
-}
 
 .apparition {
   background-image: url("../media/images/Rectangle23.png");
-  margin-bottom: -1em;
+  top: 30%;
   background-repeat: no-repeat;
-	background-size: 211px 119px;
-	padding: 1em 4em;
-	background-position: center;
-	text-align: left;
-  animation: fadeInBackground 10s ease forwards; 
-
+  background-position: center;
+  animation: fadeInBackground 10s ease forwards;
+position: absolute;
+padding-left: 4,3em;
+background-size: 60%;
+background-position-x: 80%;
 }
 
 #place {
@@ -285,16 +594,21 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-image: url("../media/images/Studio_Koukaki-image_place.png");
   width: 100%;
   min-height: 699px;
   background-size: cover;
 }
 
+#lefond{
+  background-image: url("../media/images/Studio_Koukaki-image_place.png");
+
+}
 .ou {
   padding-left: 13em;
-  width: 635px;
   height: 300px;
+  width: 45%;
+  position: absolute;
+  top:45%;
 }
 
 /*les personnages*/
@@ -320,7 +634,7 @@ h3 {
 }
 
 /*le lieu*/
-.lieu {
+#lieu {
   position: relative;
   background-image: url("../media/images/Studio_Koukaki-image_place.png");
   display: flex;
@@ -329,38 +643,37 @@ h3 {
   background-size: cover;
 }
 
-#petitnuage, #grosnuage {
+/*
+.petitnuage, .grosnuage {
   position: absolute;
   width: auto;
   height: auto;
-  animation-duration: 4s;
-  animation-timing-function: linear;
-}
-#petitnuage {
-  left: 0;
-  transform: translateY(-150%);
-  animation: deplacementPetitNuage 10s linear forwards;
+}*/
+
+.petitnuage {
+  /*animation: deplacementPetitNuage 5s linear forwards;*/
   filter: blur(10px);
   position: absolute;
+  top:80px;
+  right:200px;
 }
 
-#grosnuage {
-  right: 0;
-  transform: translateY(-150%);
-  animation: deplacementGrosNuage 10s linear forwards;
+.grosnuage {
+  right:300px;
   filter: blur(15px);
   position: absolute;
+  top:150px;
 }
-
+/*
 @keyframes deplacementPetitNuage {
   0% {
     left: 0;
   }
+
   100% {
-    left: calc(100% - 800px); 
+    left: 300px;
   }
 }
-
 @keyframes deplacementGrosNuage {
   0% {
     left: 0;
@@ -369,53 +682,62 @@ h3 {
     left: calc(100% - 600px); 
   }
 }
-
+*/
 
 #studio h2 {
-	overflow: hidden;
+  overflow: hidden;
   background-image: url("../media/images/purple_studio_bg.png");
-  animation: fadeInBackground 10s ease forwards; 
 }
 
-#studio h2::before {
-	position: absolute;
-	left: -1em;
-	top: 0;
+
+.random {
+  content: url("../media/images/random_flower.png");
+  position: absolute;
+  left: -1em;
+  top: 0;
   animation: rotateInfinitely 10s linear infinite;
+  z-index: 3;
 }
 
-.feuillemilieu{
-  height:150px;
+.feuillemilieu {
+  height: 150px;
   width: 35px;
 }
 
 .paragraphe {
-  display: flex; /* Utilisation de flexbox */
-justify-content: space-between; /* Espace équitable entre les éléments */
+  display: flex;
+  /* Utilisation de flexbox */
+  justify-content: space-between;
+  /* Espace équitable entre les éléments */
 }
 
-.para{
+.para {
   width: 600px;
   padding: 60px 20px 60px 60px;
 }
 
 
 #studio h2::after {
-	position: absolute;
-	left: -1em;
-	top: 0;
+  position: absolute;
+  left: -1em;
+  top: 0;
   animation: rotateInfinitely 10s linear infinite;
 
 }
 
 .flower {
-	position: absolute;
-	right: 5em;
-	top: 5em;
+  position: absolute;
+  right: 5em;
+  top: 5em;
   animation: rotateInfinitely 10s linear infinite;
   content: url("../media/images/flower.png");
 
 }
+
+.acceleration {
+  animation: rotateInfinitely 30s linear infinite;
+}
+
 
 .nomination {
   display: flex;
@@ -428,7 +750,7 @@ justify-content: space-between; /* Espace équitable entre les éléments */
   text-align: left;
   background-image: url("../media/images/Rectangle23.png");
   width: 840px;
-  animation: fadeInBackground 10s ease forwards; 
+  animation: fadeInBackground 10s ease forwards;
 
 }
 
@@ -438,7 +760,7 @@ justify-content: space-between; /* Espace équitable entre les éléments */
   padding-top: 6em;
   padding-bottom: 1em;
   overflow: hidden;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
 }
 
@@ -446,7 +768,7 @@ justify-content: space-between; /* Espace équitable entre les éléments */
   content: url("../media/images/Sunflower.png");
   position: absolute;
   left: 4em;
-	top: 0em;
+  top: 0em;
   animation: rotateInfinitely 10s linear infinite;
 }
 
@@ -488,10 +810,12 @@ justify-content: space-between; /* Espace équitable entre les éléments */
 .footer-content {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   overflow: hidden;
 }
 
 .oscar-template {
-  margin-bottom: 5em; 
-}/*# sourceMappingURL=style.css.map */
+  margin-bottom: 5em;
+}
+
+/*# sourceMappingURL=style.css.map */

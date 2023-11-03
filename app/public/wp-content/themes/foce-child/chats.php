@@ -1,6 +1,6 @@
 <!-- Swiper -->
 <div class="main-character">
-    <h3 class="perso">Les personnages</h3>
+    <h3 class="perso perso-transition" id="chats">Les personnages</h3>
 </div>
 <div class="swiper mySwiper">
     <div class="swiper-wrapper">
@@ -30,21 +30,4 @@
     </div>
 </div>
 
-<script>
-    var swiper = new Swiper(".mySwiper", {
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: "auto",
-        coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-        },
-    });
-</script>
+
